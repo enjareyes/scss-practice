@@ -3,3 +3,27 @@ body {
     color: #c69;
   }
 }
+
+%styled {
+  padding: 2px 10px 2px 10px;
+  border: 1px solid #c46;
+  border-radius: 2px;
+  &:disabled {
+    opacity: 0.5;;
+  }
+}
+
+.btn {
+
+  &.btn-primary {
+    @extend %styled;
+    background-color: #c46;
+    color: white;
+  }
+
+  &.btn-secondary {
+    @extend %styled;
+    background-color: rgb(237, 188, 200);
+    color: black;
+  }
+}

@@ -1,3 +1,6 @@
+@import "./variables";
+
 @mixin btn-color($color) {
- 
+    background: $color;
+    color: #ffffff;
 }

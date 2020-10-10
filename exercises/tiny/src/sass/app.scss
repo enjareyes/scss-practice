@@ -1,0 +1,20 @@
+$dimensions: ('m': 'margin', 'p': 'padding');
+
+$directions: (  't': 'top',
+                'b': 'bottom',
+                'r': 'right',
+                'l': 'left'
+            );
+
+@each $dim in $dimensions { // iterate over padding and margins
+    @for $i from 1 through 5 {
+        $size: $i * 5; // to get 5, 10, 15, 20, 25px nudges
+        @each $dir in $directions { // iterate over top, bottom, left, and right for padding and margin
+            .#{nth($dim, 1)}-#{nth($dir, 1)}-#{$size} { // #{nth($dir, 1)} will output the key (example: t)
+                #{nth($dim, 2)}-#{nth($dir, 2)}: #{$size}px; // #{nth($dir, 2)} will output the value (example: top)
+            }
+        }
+    }
+}
+
+// look in tiny/public/index.html to see what class styles this monstrosity above will output.
